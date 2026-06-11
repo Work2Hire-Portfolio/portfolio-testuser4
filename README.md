@@ -1,2 +1,9 @@
-# portfolio-testuser4
-Auto deployed portfolio website
+# Portfolio Website
+
+This portfolio was automatically deployed.
+
+Public site:
+https://yourportfolio.work/testuser4
+
+GitHub Pages origin:
+https://Work2Hire-Portfolio.github.io/portfolio-testuser4/
