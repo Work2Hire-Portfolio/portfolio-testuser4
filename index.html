@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vansh Agrawal | Executive Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2f;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --muted: #a7b4c8;
+      --gold: #d7b56d;
+      --gold-soft: rgba(215, 181, 109, 0.18);
+      --line: rgba(255, 255, 255, 0.14);
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(215, 181, 109, 0.18), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(82, 137, 255, 0.14), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0a1628 50%, #050b14 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 17, 31, 0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #fff1be);
+      color: #07111f;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(215, 181, 109, 0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.94rem;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #fff0b8);
+      color: #07111f;
+      box-shadow: 0 16px 36px rgba(215, 181, 109, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 48px rgba(215, 181, 109, 0.32);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      padding: 98px 0 76px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      background: var(--gold-soft);
+      border: 1px solid rgba(215, 181, 109, 0.32);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 7vw, 6.25rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title span {
+      color: var(--gold);
+    }
+
+    .hero-role {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 760px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .hero-bio {
+      color: #d7deea;
+      max-width: 640px;
+      font-size: 1.05rem;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 42px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      max-width: 680px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .profile-card {
+      position: relative;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(215, 181, 109, 0.24), transparent 38%),
+        radial-gradient(circle at 80% 70%, rgba(90, 130, 255, 0.16), transparent 35%);
+      pointer-events: none;
+    }
+
+    .profile-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(215, 181, 109, 0.9), rgba(255, 242, 190, 0.95));
+      color: #07111f;
+      display: grid;
+      place-items: center;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 24px;
+      box-shadow: 0 24px 50px rgba(215, 181, 109, 0.22);
+    }
+
+    .profile-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 22px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px;
+      color: #dbe5f5;
+      font-size: 0.94rem;
+      word-break: break-word;
+    }
+
+    .contact-icon {
+      min-width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--gold-soft);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.78rem;
+    }
+
+    section {
+      padding: 82px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 460px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+    }
+
+    .panel h4 {
+      font-size: 1.2rem;
+      margin-bottom: 14px;
+      color: var(--white);
+    }
+
+    .panel p {
+      color: var(--muted);
+    }
+
+    .leadership-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .leadership-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .number {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--gold-soft);
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .leadership-item h5 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .leadership-item p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .experience-card {
+      position: relative;
+      padding: 34px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.045));
+      overflow: hidden;
+    }
+
+    .experience-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(215, 181, 109, 0.12);
+      right: -70px;
+      top: -70px;
+    }
+
+    .experience-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--line);
+      color: #dbe5f5;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .work-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(215, 181, 109, 0.42);
+      box-shadow: 0 22px 58px rgba(0, 0, 0, 0.28);
+    }
+
+    .work-visual {
+      min-height: 190px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(215, 181, 109, 0.38), transparent 32%),
+        linear-gradient(135deg, #122139, #07111f);
+      display: flex;
+      align-items: end;
+      padding: 24px;
+      position: relative;
+    }
+
+    .work-visual::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+    }
+
+    .work-year {
+      position: relative;
+      z-index: 2;
+      color: #07111f;
+      background: var(--gold);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .work-body {
+      padding: 26px;
+    }
+
+    .work-type {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 8px;
+    }
+
+    .work-body h4 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .work-body p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .work-link {
+      display: inline-flex;
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 0.94rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      font-weight: 800;
+      color: #eef4ff;
+    }
+
+    .cta {
+      padding: 88px 0 100px;
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(135deg, rgba(215, 181, 109, 0.22), rgba(255, 255, 255, 0.075)),
+        rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(215, 181, 109, 0.32);
+      border-radius: 34px;
+      padding: 50px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h3 {
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      color: #dce5f2;
+      max-width: 620px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .portfolio-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-text {
+        margin-top: 14px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+
+      .profile-card,
+      .panel,
+      .experience-card,
+      .cta-box {
+        padding: 24px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-mark">VA</span>
+        <span>Vansh Agrawal</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Executive Portfolio</div>
+
+          <h1 class="hero-title">
+            VANSH <br />
+            <span>AGRAWAL</span>
+          </h1>
+
+          <p class="hero-role">
+            CEO at SWET · IIT R · Manager at AIESEC in Bhopal · Panel Member & Co-Finance Lead at Vitera
+          </p>
+
+          <p class="hero-bio">
+            I help businesses grow through strategic planning, marketing leadership, and practical guidance.
+            Currently, I am leading the marketing side of W2H and working with various organizations to support growth-focused initiatives.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:vanshagrawal509@gmail.com">Contact Me</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/vansh-agrawal-b8612a291/" target="_blank" rel="noopener">View LinkedIn</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>2025</strong>
+              <span>Featured Work</span>
+            </div>
+            <div class="stat">
+              <strong>4+</strong>
+              <span>Leadership Roles</span>
+            </div>
+            <div class="stat">
+              <strong>Bhopal</strong>
+              <span>Based in India</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="profile-inner">
+            <div class="avatar">VA</div>
+
+            <h2>Growth-focused business leader</h2>
+
+            <p>
+              Working across entrepreneurship, marketing, finance, and organizational leadership with a focus on strategic planning and execution.
+            </p>
+
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:vanshagrawal509@gmail.com">
+                <span class="contact-icon">@</span>
+                <span>vanshagrawal509@gmail.com</span>
+              </a>
+
+              <a class="contact-item" href="tel:+918719899303">
+                <span class="contact-icon">☎</span>
+                <span>+91 87198 99303</span>
+              </a>
+
+              <div class="contact-item">
+                <span class="contact-icon">⌖</span>
+                <span>Bhopal, Madhya Pradesh, India</span>
+              </div>
+
+              <a class="contact-item" href="https://yourportfolio.work/testuser2" target="_blank" rel="noopener">
+                <span class="contact-icon">↗</span>
+                <span>yourportfolio.work/testuser2</span>
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">About</div>
+            <h3>Strategic planning, business growth, and leadership execution.</h3>
+          </div>
+
+          <p class="section-text">
+            Vansh works with organizations on growth, marketing, business direction, and team-oriented execution.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel">
+            <h4>Professional Summary</h4>
+            <p>
+              Vansh Agrawal is an emerging business leader based in Bhopal, Madhya Pradesh. His work focuses on helping businesses grow through strategic planning, marketing guidance, and organization-level leadership.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h4>Current Focus</h4>
+            <p>
+              Currently leading the marketing side of W2H while contributing to multiple leadership and finance-focused roles across SWET, AIESEC in Bhopal, and Vitera.
+            </p>
+
+            <div class="badge-row">
+              <span class="badge">Business Strategy</span>
+              <span class="badge">Marketing Leadership</span>
+              <span class="badge">Growth Planning</span>
+              <span class="badge">Finance Coordination</span>
+              <span class="badge">Organizational Leadership</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Leadership</div>
+            <h3>Roles across business, marketing, finance, and youth leadership.</h3>
+          </div>
+
+          <p class="section-text">
+            A cross-functional profile built around initiative-taking, communication, business development, and organizational contribution.
+          </p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-content">
+            <div class="leadership-list">
+              <div class="leadership-item">
+                <div class="number">01</div>
+                <div>
+                  <h5>CEO at SWET</h5>
+                  <p>Contributing to business direction, planning, and leadership execution.</p>
+                </div>
+              </div>
+
+              <div class="leadership-item">
+                <div class="number">02</div>
+                <div>
+                  <h5>Manager at AIESEC in Bhopal</h5>
+                  <p>Supporting team coordination, management responsibilities, and organizational initiatives.</p>
+                </div>
+              </div>
+
+              <div class="leadership-item">
+                <div class="number">03</div>
+                <div>
+                  <h5>Panel Member & Co-Finance Lead at Vitera</h5>
+                  <p>Working on finance coordination, panel-level contribution, and event or organizational support.</p>
+                </div>
+              </div>
+
+              <div class="leadership-item">
+                <div class="number">04</div>
+                <div>
+                  <h5>Marketing Lead for W2H</h5>
+                  <p>Currently leading marketing activities and helping strengthen growth-focused communication.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="badge-row">
+              <span class="badge">CEO</span>
+              <span class="badge">Manager</span>
+              <span class="badge">Panel Member</span>
+              <span class="badge">Co-Finance Lead</span>
+              <span class="badge">Marketing Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected Work</div>
+            <h3>Portfolio and business work across organizations.</h3>
+          </div>
+
+          <p class="section-text">
+            A snapshot of Vansh’s business-facing work and organizational experience.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="work-card">
+            <div class="work-visual">
+              <span class="work-year">2025</span>
+            </div>
+
+            <div class="work-body">
+              <div class="work-type">Business Work</div>
+              <h4>Portfolio for Me</h4>
+              <p>
+                Worked with various organizations, gaining exposure to business operations, leadership, and growth-focused initiatives.
+              </p>
+              <a class="work-link" href="https://www.google.com/search?gs_ssp=eJzj4tTP1TewzEouKzZg9GKvzC8tKU1KBQA_-AaN&q=youtube&oq=youtube&gs_lcrp=EgZjaHJvbWUqDQgBEC4YgwEYsQMYgAQyBwgAEAAYjwIyDQgBEC4YgwEYsQMYgAQyDQgCEAAYgwEYsQMYgAQyCggDEAAYsQMYgAQyDQgEEAAYgwEYsQMYgAQyCggFEAAYsQMYgAQyCggGEAAYsQMYgAQyBggHEAUYQNIBCDQzMzBqMGo3qAIIsAIB8QVm6WcVlqVIWg&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener">
+                View Work →
+              </a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-visual">
+              <span class="work-year">Now</span>
+            </div>
+
+            <div class="work-body">
+              <div class="work-type">Marketing Leadership</div>
+              <h4>Marketing Side of W2H</h4>
+              <p>
+                Currently leading marketing-related responsibilities for W2H, with a focus on communication, outreach, planning, and business growth.
+              </p>
+              <a class="work-link" href="mailto:vanshagrawal509@gmail.com">
+                Discuss Collaboration →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Strengths</div>
+            <h3>Core areas of contribution.</h3>
+          </div>
+
+          <p class="section-text">
+            Built around practical business execution, leadership responsibility, and growth-oriented thinking.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill">Strategic Planning</div>
+          <div class="skill">Business Growth</div>
+          <div class="skill">Marketing</div>
+          <div class="skill">Leadership</div>
+          <div class="skill">Finance Coordination</div>
+          <div class="skill">Team Management</div>
+          <div class="skill">Communication</div>
+          <div class="skill">Organizational Work</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h3>Let’s connect for business, growth, and leadership opportunities.</h3>
+            <p>
+              Open to conversations around strategic planning, business development, marketing leadership, finance coordination, and organizational collaboration.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:vanshagrawal509@gmail.com">Email Vansh</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/vansh-agrawal-b8612a291/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Vansh Agrawal. All rights reserved.</span>
+      <span>Portfolio: yourportfolio.work/testuser2</span>
+    </div>
+  </footer>
+</body>
+</html>
